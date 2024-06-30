@@ -1,7 +1,7 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
-date: {{ now.Format (default "2006-01-02 15:04:05" .Site.Params.dateFmt) }}
-draft: true
+date: {{ now.Format .Site.Params.dateFmt }}
+draft: false
 categories:
   - uncategorized
 ---
