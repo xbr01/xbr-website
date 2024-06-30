@@ -12,6 +12,6 @@ tags:
   - resources
 
 ---
-coming soon
+Resources that I found uselful (this list will be updated often)
 <!--more-->
-coming soon
+[android-component-security](https://www.hebunilhanli.com/wonderland/mobile-security/android-component-security/)
