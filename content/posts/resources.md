@@ -15,3 +15,9 @@ tags:
 Resources that I found uselful (this list will be updated often)
 <!--more-->
 [android-component-security](https://www.hebunilhanli.com/wonderland/mobile-security/android-component-security/)
+
+[NVIDO Labs articles](https://blog.nviso.eu/category/mobile-security/)
+
+[Oversecured articles](https://blog.oversecured.com/)
+
+[Android bascis ppts](https://valsamaras.medium.com/android-security-workshop-5eadeb50fba)
