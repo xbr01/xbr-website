@@ -2,6 +2,7 @@ baseURL: http://example.org/
 languageCode: en-us
 title: Abhiram | xbr
 theme : 'smigle'
+canonifyURLs : true
 
 menu:
   main: # Change menu as needed
