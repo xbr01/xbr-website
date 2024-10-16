@@ -17,6 +17,8 @@ This is the first intentional vulnerable APK I'm analysing. Without further ado,
 
 <!--more-->
 
+---
+
 1.**Insecure logging**
 
 In the hint of the challenge it was given that insecure logging occurs when developers intentionally or unintentionally log the sensitive info that the user have entered such as credentials,session IDs etc.
@@ -37,6 +39,8 @@ To view the logs of an app you can use the command:
 
 So yeah it is indeed being logged!
 
+---
+
 2.**Hardcoding Issues - Part 1**
 
 So first of all I searched for what hardcoding is and found out that it is leaving the sensitive information in the source code without encrypting. Know more [here](https://owasp.org/www-community/vulnerabilities/Use_of_hard-coded_password)
@@ -46,6 +50,9 @@ So first of all I searched for what hardcoding is and found out that it is leavi
 Then I analysed the APK using *jadx* looking for hardcoded data. In the *HardcodeActivity* we can see a *access* method in which there is a if-else condition which checks if the input in the edit text box in the app is equal to a string(vendorsecretkey) mentioned there and grants permission if it satisfies, and yeah we have found the hardcoded string.
 
 ![Untitled](/diva_APK/5.png)
+
+---
+
 
 3.**Insecure data storage - Part 1**
 In *InsecureDataStorage1Activity* we can see that the username and password is stored in the shared preference. Read more about Insecure data storage [here.](https://owasp.org/www-project-mobile-top-10/2014-risks/m2-insecure-data-storage) More about shared preferences [here.](https://developer.android.com/training/data-storage/shared-preferences)
@@ -64,6 +71,9 @@ I got two values from here yes and 447211456. I entered this as username and pas
 
 ![photo_6278190504336275175_y.jpg](/diva_APK/9.jpg)
 
+---
+
+
 4.**Insecure data storage Part-2**
 
 As before I went to the *InsecureDataStorage2Activity* class and found that it is using SQLite database to store the credentials. Using adb I went to data>data>package_name>database as all the databases are stored here and there were many files in it.
@@ -80,6 +90,9 @@ I googled how to open a database file in the terminal itself and got to know *sq
 
 ![photo_6282532372675147580_y.jpg](/diva_APK/13.jpg)
 
+---
+
+
 5.**Insecure data storage Part-3**
 
 In the *InsecureDataStorage3Activity* class we can see that credentials are stored inside a file whose name consists of the words *info* and *tmp.* I navigated inside data>data>package_name and got to see a file name with *info* and *tmp* in it and opened it and yeah the credentials are stored there!
@@ -87,6 +100,9 @@ In the *InsecureDataStorage3Activity* class we can see that credentials are stor
 ![Untitled](/diva_APK/14.png)
 
 ![photo_6282532372675147609_y.jpg](/diva_APK/15.jpg)
+
+---
+
 
 6.**Insecure data storage Part-4**
 
@@ -100,17 +116,26 @@ I went to the sd card directory and checked for hidden files in it using *ls* co
 
 ![Untitled](/diva_APK/18.png)
 
+---
+
+
 7.**Input validation issues Part-1**
 
 ' or 1=1 —
 
 when we input a username that we get from the source code we can see that the credentials are being shown.
 
+---
+
+
 8.**Input validation issues Part-2**
 
 ![Untitled](/diva_APK/19.png)
 
 by using file:///path_to_any_file will be able to fetch any data and display it in the app
+
+---
+
 
 9.**Access control issues Part-1**
 
@@ -136,6 +161,9 @@ As for this challenge i tried opening the *APICredsActivity*  and yeah the app i
 
 ![photo_6300871139999726883_y.jpg](/diva_APK/23.jpg)
 
+---
+
+
 10. **Access control issues Part-2**
 
 In the source code we can see that the intent passes a parameter which is of boolean value. And also the parameter is added to *strings.xml* file, in which we can see the actual parameter name.
@@ -160,6 +188,9 @@ Googled and found out that *--ez extra_key extra_boolean_value* flag can be used
 
 ![Untitled](/diva_APK/28.png)
 
+---
+
+
 11. **Access control issues Part-3**
 
 In this we needed to access the private notes from outside the without a password. So in the source code I was able to see that a *cursor* is being created. Cursor contain the query request to be showed in the UI.
@@ -173,6 +204,9 @@ In the query here we can see that it requests something from *CONTENT_URL* in th
 I tried to run a query accessing this URI and yeah its showing all the private notes!
 
 ![Untitled](/diva_APK/31.png)
+
+---
+
 
 12. **Hardcode2Activity**
 
@@ -196,6 +230,9 @@ I analyse this also using ghidra. I located the function and checked for the str
 
 ![Untitled](/diva_APK/37.png)
 
+---
+
+  
 13. **Input validation issue - Part 3**
 
 > **memory corruption vulnerability**
