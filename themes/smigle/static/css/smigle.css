@@ -82,3 +82,8 @@ div.post-meta {
   margin: 2px;
   padding: 8px;
 }
+
+.post-separator {
+  margin: 2rem 0;
+  border-bottom: 1px solid #eee;
+}
