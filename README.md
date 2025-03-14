@@ -1,1 +1,1 @@
-xbr's personal website
+xbr's blogs
