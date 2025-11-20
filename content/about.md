@@ -1,10 +1,10 @@
 ---
 title: About
 layout: default
-date: 29-06-2024
+date: 20-11-2025
 ---
 
 
-Hey there, this is Abhiram aka xbr. I am currently pursuing a BCA degree at [Amrita Vishwa Vidyapeetham](https://www.amrita.edu/). I do pentest and play CTFs with Team bi0s, No.1 ranked CTF team in India.
+Hey there, this is Abhiram aka xbr. I have graduated with a BCA degree from [Amrita Vishwa Vidyapeetham](https://www.amrita.edu/). I currently do independent security research, identifying vulnerabilities in mobile applications. Occasionally, I try to dissect malwares and also play CTFs with Team bi0s, No.1 ranked CTF team in India. 
 
 Feel free to reach out for anything, find me on the below links.
