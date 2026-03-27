@@ -3,7 +3,7 @@ author: xbr
 title: Android Security Resources
 //subtitle: collection of resources I found useful
 date: 2024-06-28 
-Lastmod: 2024-06-28
+Lastmod: 2026-03-26
 description: collection of resources I found useful 
 categories:
   - technical
@@ -133,4 +133,4 @@ Resources/blogs that I found uselful (this list will be updated often)
  - https://bughunters.google.com/reports/vrp/Tkj9d5vwo
 
 ## AI for Mobile
- - https://github.com/trailofbits/skills/tree/main/plugins/firebase-apk-scanner
+ -https://github.com/trailofbits/skills/tree/main/plugins/firebase-apk-scanner
